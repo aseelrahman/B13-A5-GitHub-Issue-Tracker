@@ -20,15 +20,66 @@
       rel="stylesheet"
       type="text/css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>GitHub Issues Tracer</title>
   </head>
-  <body>
-    <section id="login-page">
+  <body class="flex justify-center items-center bg-[#F8FAFC] min-h-screen">
+    <section
+      id="login-page"
+      class="w-[520px] p-8 space-y-6 shadow-lg bg-[#FFFFFF] rounded-lg"
+    >
+      <div class="flex flex-col justify-center items-center">
+        <img
+          class="h-[100px] w-[100px] mb-6"
+          src="assets/github-logo.png"
+          alt="GitHub Logo"
+        />
+        <h2 class="font-semibold text-2xl">GitHub Issues Tracker</h2>
+        <p class="text-[#64748B]">Sign in to manage your issues</p>
+      </div>
+      <div class="space-y-4">
+        <div>
+          <label for="username" class="block mb-2 font-medium">Username</label>
+          <label class="input w-full rounded-lg">
+            <input
+              id="username"
+              type="text"
+              placeholder="Enter Username"
+              required
+            />
+          </label>
+          <p class="text-primary text-sm mt-1">Default: admin</p>
+        </div>
+
+        <div>
+          <label for="password" class="block mb-2 font-medium">Password</label>
+          <label class="input w-full rounded-lg">
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter Password"
+              required
+            />
+          </label>
+          <p class="text-primary text-sm mt-1">Default: admin123</p>
+        </div>
+      </div>
+      <!-- Submit Button -->
+      <button class="btn btn-primary w-full rounded-lg">Sign In</button>
+
+      <div class="flex items-center gap-4">
+        <hr class="flex-1 border-t border-[#E4E4E7]" />
+        <span>OR</span>
+        <hr class="flex-1 border-t border-[#E4E4E7]" />
+      </div>
+
       <div>
-        <img src="assets/github-logo.png" alt="" />
-        <h2>GitHub Issues Tracker</h2>
-        <p>Sign in to manage your issues</p>
+        <p class="text-[#64748B] text-[14px] text-center mb-2">
+          Demo Credentials:
+        </p>
+        <div class="bg-[#F8FAFC] text-center py-6 rounded-lg">
+          <p><span>Username:</span> admin</p>
+          <p><span>Password:</span> admin123</p>
+        </div>
       </div>
     </section>
   </body>
