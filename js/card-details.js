@@ -14,7 +14,7 @@ const allIssues = async () => {
         const card = document.createElement('div')
 
         card.innerHTML = `
-        <div
+        <div onclick="modal(${data.id})"
           class="w-[256px] bg-[#FFFFFF] rounded p-4 border-t-4  ${data.status === 'open'? 'border-[#00A96E]': data.status ==='closed'? 'border-[#A855F7]': ''}"
         >
           <div class="flex justify-between mb-3">
@@ -55,7 +55,7 @@ const allIssues = async () => {
           <hr class="border-[#E4E4E7] border-1" />
           <div class="mt-4">
             <p class="text-[12px] text-[#64748B]">#${data.id} by ${data.author}</p>
-            <p class="text-[12px] text-[#64748B]">${new Date (data.updatedAt).toLocaleDateString()}</p>
+            <p class="text-[12px] text-[#64748B]">${new Date (data.createdAt).toLocaleDateString()}</p>
           </div>
         </div>
         `

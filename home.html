@@ -74,7 +74,9 @@
                 alt="aperture icon"
             /></span>
             <div>
-              <h2 class="text-[20px] font-semibold"><span id="count">0</span> Issues</h2>
+              <h2 class="text-[20px] font-semibold">
+                <span id="count">0</span> Issues
+              </h2>
               <p class="text-[#64748B]">Track and manage your project issues</p>
             </div>
           </div>
@@ -95,7 +97,8 @@
         </div>
       </section>
       <!-- Cards Container-->
-      <section id="card-container"
+      <section
+        id="card-container"
         class="bg-[#FBFBFB] grid grid-cols-4 items-stretch gap-3 mx-auto rounded-lg w-[1110px] p-6"
       >
         <!-- Card -->
@@ -141,7 +144,17 @@
           </div>
         </div>
       </section>
+
+      <!-- Modal -->
+      <!-- Open the modal using ID.showModal() method -->
+      
+      <dialog id="my_modal" class="modal modal-bottom sm:modal-middle ">
+        <div id="modal-detail-container" class="modal-box p-8 space-y-6">
+          
+        </div>
+      </dialog>
     </main>
     <script src="js/card-details.js"></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>
