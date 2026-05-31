@@ -74,7 +74,7 @@
                 alt="aperture icon"
             /></span>
             <div>
-              <h2 class="text-[20px] font-semibold"><span>0</span> Issues</h2>
+              <h2 class="text-[20px] font-semibold"><span id="count">0</span> Issues</h2>
               <p class="text-[#64748B]">Track and manage your project issues</p>
             </div>
           </div>
@@ -94,9 +94,9 @@
           </div>
         </div>
       </section>
-      <!-- Cards Section-->
-      <section
-        class="bg-[#FBFBFB] grid grid-cols-4 gap-3 mx-auto rounded-lg w-[1110px] p-6"
+      <!-- Cards Container-->
+      <section id="card-container"
+        class="bg-[#FBFBFB] grid grid-cols-4 items-stretch gap-3 mx-auto rounded-lg w-[1110px] p-6"
       >
         <!-- Card -->
         <div
@@ -128,15 +128,20 @@
                 class="text-[12px] p-[6px] font-medium border border-[#FDE68A] bg-[#FFF8DB] text-[#D97706] rounded-full"
                 ><i class="fa-solid fa-bug"></i> HELP WANTED</span
               >
+              <span
+                class="text-[12px] p-[6px] font-medium border border-[#BBF7D0] bg-[#DEFCE8] text-[#00A96E] rounded-full"
+                ><i class="fa-solid fa-bahai"></i> ENHANCEMENT</span
+              >
             </div>
           </div>
           <hr class="border-[#E4E4E7] border-1" />
           <div class="mt-4">
             <p class="text-[12px] text-[#64748B]">#1 by john_doe</p>
-            <p class="text-[12px] text-[#64748B]" `>1/15/2024</p>
+            <p class="text-[12px] text-[#64748B]">1/15/2024</p>
           </div>
         </div>
       </section>
     </main>
+    <script src="js/card-details.js"></script>
   </body>
 </html>
