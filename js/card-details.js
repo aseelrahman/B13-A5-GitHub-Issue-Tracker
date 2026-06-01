@@ -25,7 +25,7 @@ const loadIssues = async (currentStatus = 'all', search = '') => {
 
     card.innerHTML = `
         <div onclick="modal(${data.id})"
-          class="w-[256px] bg-[#FFFFFF] rounded p-4 border-t-4  ${data.status === "open" ? "border-[#00A96E]" : data.status === "closed" ? "border-[#A855F7]" : ""}"
+          class="w-full bg-[#FFFFFF] rounded p-4 border-t-4  ${data.status === "open" ? "border-[#00A96E]" : data.status === "closed" ? "border-[#A855F7]" : ""}"
         >
           <div class="flex justify-between mb-3">
             <span><img src="${data.status === "open" ? "assets/Open-Status.png" : data.status === "closed" ? "assets/Closed- Status .png" : ""}"/></span>
@@ -76,8 +76,8 @@ const loadIssues = async (currentStatus = 'all', search = '') => {
         `;
     cardContainer.appendChild(card);
     issueCount.innerText = issues.length;
-    manageSpinner(false)
   });
+  manageSpinner(false)
 };
 
 const manageSpinner = (status) =>{
