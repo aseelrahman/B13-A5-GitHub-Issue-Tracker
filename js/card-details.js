@@ -1,6 +1,7 @@
 let currentStatus = 'all';
 
 const loadIssues = async (currentStatus = 'all', search = '') => {
+  manageSpinner(true)
   const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
   const res = await fetch(url);
   const data = await res.json();
@@ -75,13 +76,27 @@ const loadIssues = async (currentStatus = 'all', search = '') => {
         `;
     cardContainer.appendChild(card);
     issueCount.innerText = issues.length;
+    manageSpinner(false)
   });
 };
+
+const manageSpinner = (status) =>{
+  if(status === true){
+    document.getElementById('card-container').classList.add('hidden')
+    document.getElementById('spinner').classList.remove('hidden')
+  }
+  else{
+    document.getElementById('card-container').classList.remove('hidden')
+    document.getElementById('spinner').classList.add('hidden')
+
+  }
+}
 
 loadIssues();
 
 document.querySelectorAll("[data-status]").forEach((button) => {
   button.addEventListener("click", (e) => {
+
     currentStatus = e.target.dataset.status;
     document.querySelectorAll("[data-status]").forEach((btn) => {
       btn.classList.remove("active");
@@ -94,6 +109,7 @@ document.querySelectorAll("[data-status]").forEach((button) => {
 
 document.getElementById('search-btn').addEventListener('click',
   () => {
+
     const search = document.getElementById('search-input').value
     loadIssues(currentStatus, search);
     
