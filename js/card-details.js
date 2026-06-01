@@ -1,12 +1,18 @@
-const loadIssues = async (status = "all") => {
+let currentStatus = 'all';
+
+const loadIssues = async (currentStatus = 'all', search = '') => {
   const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
   const res = await fetch(url);
   const data = await res.json();
 
   let issues = data.data;
 
-  if (status !== "all") {
-    issues = issues.filter((issue) => issue.status === status);
+  if (currentStatus !== "all") {
+    issues = issues.filter((issue) => issue.status === currentStatus);
+  }
+
+  if(search){
+    issues = issues.filter(issue => issue.title.toLowerCase().includes(search.toLowerCase()))
   }
 
   const issueCount = document.getElementById("count");
@@ -76,12 +82,20 @@ loadIssues();
 
 document.querySelectorAll("[data-status]").forEach((button) => {
   button.addEventListener("click", (e) => {
-    status = e.target.dataset.status;
+    currentStatus = e.target.dataset.status;
     document.querySelectorAll("[data-status]").forEach((btn) => {
       btn.classList.remove("active");
     });
     e.target.classList.add("active");
 
-    loadIssues(status);
+    loadIssues(currentStatus);
   });
 });
+
+document.getElementById('search-btn').addEventListener('click',
+  () => {
+    const search = document.getElementById('search-input').value
+    loadIssues(currentStatus, search);
+    
+  }
+)
